@@ -6,7 +6,7 @@ from .managers import UserManager
 
 class User(AbstractBaseUser, PermissionsMixin):
     email = models.CharField(max_length=40, unique=True, verbose_name="아이디")
-    password = models.CharField(max_length=30, verbose_name="비밀번호")
+    password = models.CharField(max_length=100, verbose_name="비밀번호")
     nickname = models.CharField(max_length=20, unique=True, verbose_name="닉네임")
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="회원가입시간")
     is_active = models.BooleanField(default=True)

@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = 'django-insecure-(khe+@xj!63#d%4(jcq#wjivd#9f5dii6-9_-775!^8sp)cx1j'
+SECRET_KEY = 'django-insecure-(khe+@xj!63#d%4(jcq#wjivd#9f5dii6-9_-775!^8sp)cx1j'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -87,15 +87,15 @@ TEMPLATES = [
 WSGI_APPLICATION = 'shopping.wsgi.application'
 
 
-def get_env_variable(var_name):
-    try:
-        return os.environ[var_name]
-    except KeyError:
-        error_msg = 'Set the {} environment variable'.format(var_name)
-        raise ImproperlyConfigured(error_msg)
-
-
-SECRET_KEY = get_env_variable('DJANGO_SECRET')
+# def get_env_variable(var_name):
+#     try:
+#         return os.environ[var_name]
+#     except KeyError:
+#         error_msg = 'Set the {} environment variable'.format(var_name)
+#         raise ImproperlyConfigured(error_msg)
+#
+#
+# SECRET_KEY = get_env_variable('DJANGO_SECRET')
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
@@ -103,14 +103,11 @@ SECRET_KEY = get_env_variable('DJANGO_SECRET')
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': get_env_variable('DATABASE'),
+        'NAME': 'django',
         'USER': 'admin',
-        'PASSWORD': '1234',
-        'HOST': get_env_variable('DB_HOST'),
-        'PORT': get_env_variable('DB_PORT'),
-        'OPTIONS': {
-            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
-        }
+        'PASSWORD': 'kty26511!',
+        'HOST': 'database-1.ccsbnrbep7aj.ap-northeast-2.rds.amazonaws.com',
+        'PORT': '3306',
     }
 }
 
