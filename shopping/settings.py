@@ -87,21 +87,17 @@ TEMPLATES = [
 WSGI_APPLICATION = 'shopping.wsgi.application'
 
 
-
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': get_env_variable('DATABASE'),
+        'NAME': 'django',
         'USER': 'admin',
-        'PASSWORD': '1234',
-        'HOST': get_env_variable('DB_HOST'),
-        'PORT': get_env_variable('DB_PORT'),
-        'OPTIONS': {
-            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
-        }
+        'PASSWORD': 'kty26511!',
+        'HOST': 'database-1.ccsbnrbep7aj.ap-northeast-2.rds.amazonaws.com',
+        'PORT': '3306',
     }
 }
 
