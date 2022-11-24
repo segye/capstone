@@ -87,16 +87,6 @@ TEMPLATES = [
 WSGI_APPLICATION = 'shopping.wsgi.application'
 
 
-# def get_env_variable(var_name):
-#     try:
-#         return os.environ[var_name]
-#     except KeyError:
-#         error_msg = 'Set the {} environment variable'.format(var_name)
-#         raise ImproperlyConfigured(error_msg)
-#
-#
-# SECRET_KEY = get_env_variable('DJANGO_SECRET')
-
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
